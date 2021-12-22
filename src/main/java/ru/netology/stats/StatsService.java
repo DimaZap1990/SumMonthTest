@@ -44,8 +44,9 @@ public class StatsService {
 
     public int sumMinAvgMonth(long[] sales) {
         int minAvgMonth = 0;
+        int avgSales = avgSalesMonth(sales);
         for (long sale : sales) {
-            if (sale < avgSalesMonth(sales))
+            if (sale < avgSales)
                 minAvgMonth = minAvgMonth + 1;
         }
 
@@ -53,8 +54,9 @@ public class StatsService {
     }
     public int sumMaxAvgMonth(long[] sales) {
         int maxAvgMonth = 0;
+        int avgSales = avgSalesMonth(sales);
         for (long sale : sales) {
-            if (sale > avgSalesMonth(sales))
+            if (sale > avgSales)
                 maxAvgMonth = maxAvgMonth + 1;
         }
 
